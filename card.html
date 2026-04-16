@@ -3,36 +3,70 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  <title>Birthday Card ALICE</title>
+  <title>Birthday Card for Alice Wu 💕</title>
   <!-- Google Font-->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet" />
   <!-- Stylesheet -->
   <link rel="stylesheet" href="card.css" />
 </head>
 <body>
-  <div class="card">
-    <div class="outside">
-      <div class="front">
-        <p>Happy Birthday ALICE</p>
-        <div class="cake">
-          <div class="top-layer"></div>
-          <div class="middle-layer"></div>
-          <div class="bottom-layer"></div>
-          <div class="candle"></div>
+  <div class="hearts-bg" id="heartsBg"></div>
+  
+  <div class="container">
+    <h1 class="card-title">Happy Birthday Alice Wu!</h1>
+    
+    <div class="card">
+      <div class="outside">
+        <div class="front">
+          <p>Happy Birthday Alice! 💕</p>
+          <div class="cake">
+            <div class="top-layer"></div>
+            <div class="middle-layer"></div>
+            <div class="bottom-layer"></div>
+            <div class="candle"></div>
+          </div>
+          <p class="click-hint">Click to open ✨</p>
+        </div>
+        <div class="back">
+          <button onclick="location.href='index.html'" id="button_back">← Back to Main Page</button>
         </div>
       </div>
-      <div class="back">
-        <button onclick="location.href='index.html'" id="button_back">Go back</button>
+      <div class="inside">
+        <h2>Special Gift for You! 🎁</h2>
+        <p>Dear Alice,</p>
+        <p class="message">
+          On your special day, I wish you all the happiness, love, and joy in the world! 
+          May this year be filled with beautiful moments and wonderful surprises.
+        </p>
+        <p>Here's a little something just for you:</p>
+        <a href="https://gifft.me/o/d/2ld7rgo2x82nponkjj4o11xt" target="_blank" class="gift-link">
+          <span class="gift-icon">🎀</span>
+          <p>Click here to open your gift!</p>
+          <span class="gift-icon">🎀</span>
+        </a>
+        <p class="love-note">With lots of love 💖</p>
       </div>
     </div>
-    <div class="inside">
-      <p>Oooo, It's a link!?</p>
-      <a href="https://gifft.me/o/d/2ld7rgo2x82nponkjj4o11xt" target="_blank">
-        <p>Click here!</p>
-      </a>
-      <h3>⬆️</h3>
-    </div>
   </div>
+  
+  <script>
+    // Create floating hearts
+    function createHearts() {
+      const container = document.getElementById('heartsBg');
+      const heartSymbols = ['💕', '💖', '💗', '✨', '🌸'];
+      
+      for (let i = 0; i < 15; i++) {
+        const heart = document.createElement('div');
+        heart.className = 'floating-heart';
+        heart.textContent = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+        heart.style.left = Math.random() * 100 + '%';
+        heart.style.animationDelay = Math.random() * 8 + 's';
+        heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+        container.appendChild(heart);
+      }
+    }
+    
+    createHearts();
+  </script>
 </body>
 </html>

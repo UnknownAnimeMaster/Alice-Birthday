@@ -3,31 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <title>Alice Birthday</title>
+    <title>Happy Birthday Alice Wu! 💕</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="main.js"></script>
-    <link rel="icon" href="Mu.jpg">
 </head>
 
 <body>
-    <h1>Blow the candle Alice!</h1>
-    <button onclick="location.href='card.html'" id="button_go">Press Once You ready</button>
-     <div class="glow" id="glow"></div>
-     <div id="candle">
-       <div class="stripe"></div>
-       <div class="stripe"></div>
-       <div class="stripe"></div>
-       <div class="stripe"></div>
-       <div class="stripe"></div>
-       <div id="top">
-         <div class="smoke"></div>
-         <div class="smoke"></div>
-         <div class="smoke"></div>
-         <div id="knot"></div>
-         <div class="burn" id="flame"></div>
-        </div>
+    <!-- Floating Hearts Background -->
+    <div class="hearts-container" id="heartsContainer"></div>
+    
+    <!-- Main Content -->
+    <div class="container">
+        <header class="header">
+            <h1 class="title">Happy Birthday</h1>
+            <h2 class="subtitle">Alice Wu</h2>
+            <div class="decorative-line"></div>
+        </header>
+
+        <main class="main-content">
+            <div class="photo-frame">
+                <img src="Alice.png" alt="Alice Wu" class="profile-photo">
+                <div class="frame-decoration"></div>
+            </div>
+
+            <div class="message-card">
+                <p class="birthday-message">
+                    Wishing you a day filled with love, laughter, and all the beautiful things you deserve! 
+                    May this year bring you endless joy and wonderful memories. ✨
+                </p>
+            </div>
+
+            <div class="candle-section">
+                <p class="instruction-text">Make a wish and blow out the candle</p>
+                <div id="candle">
+                    <div class="stripe"></div>
+                    <div class="stripe"></div>
+                    <div class="stripe"></div>
+                    <div class="stripe"></div>
+                    <div class="stripe"></div>
+                    <div id="top">
+                        <div class="smoke"></div>
+                        <div class="smoke"></div>
+                        <div class="smoke"></div>
+                        <div id="knot"></div>
+                        <div class="burn" id="flame"></div>
+                    </div>
+                </div>
+                <div class="glow" id="glow"></div>
+            </div>
+
+            <button onclick="location.href='card.html'" id="button_go" style="display: none;">
+                Open Your Special Card 💌
+            </button>
+        </main>
+
+        <footer class="footer">
+            <p>Made with 💖 for Alice</p>
+        </footer>
     </div>
+
     <audio id="birthday-audio" src="birthday-audio.mp3"></audio>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>

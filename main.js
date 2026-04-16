@@ -1,7 +1,26 @@
+// Create floating hearts background
+function createHearts() {
+    const container = document.getElementById('heartsContainer');
+    const heartSymbols = ['💕', '💖', '💗', '💓', '💞', '✨', '🌸'];
+    
+    for (let i = 0; i < 20; i++) {
+        const heart = document.createElement('div');
+        heart.className = 'heart';
+        heart.textContent = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+        heart.style.left = Math.random() * 100 + '%';
+        heart.style.animationDelay = Math.random() * 8 + 's';
+        heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+        container.appendChild(heart);
+    }
+}
+
 $(document).ready(function() {
+    // Initialize floating hearts
+    createHearts();
+    
     $(function () {
         var flame = $("#flame");
-        var txt = $("h1");
+        var txt = $(".instruction-text");
         var audio = document.getElementById("birthday-audio");
 
         // Make it hidden on first time
@@ -41,7 +60,7 @@ $(document).ready(function() {
                 // Show the button after 5 seconds
                 showButton();
                 
-                txt.hide().html("I wish you a happy birthday").delay(750).fadeIn(300);
+                txt.hide().html("Make a wish! 🎂✨").delay(750).fadeIn(300);
                 $("#candle").animate(
                     {
                         opacity: ".5"
